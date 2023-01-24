@@ -1,0 +1,25 @@
+body{
+    background-color: #f3f3f3;
+    font-size: 16px;
+}
+
+form{
+    background-color: #ffffff;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 2rem;
+
+    font-size: 2rem;
+}
+
+input[type="email"]{
+    
+}
+
+/* .form-group{
+    display: block;;
+} */

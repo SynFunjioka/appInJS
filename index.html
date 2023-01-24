@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>App with JS</title>
+</head>
+<body>
+    
+    <form>
+        <div class="form-group">
+            <label for="email">LinkedIn:</label>
+            <input type="url" id="email" name="email" required  placeholder="URL" >
+            <p class="error-feedback"></p>
+        </div>
+        <div class="form-group">
+            <label for="linkedinURL">LinkedIn</label>
+            <input type="url" id="linkedinURL" name="linkedinURL" required  placeholder="URL" >
+            <p class="error-feedback"></p>
+        </div>
+<!--         <label for="linkedinURL">LinkedIn:</label>
+        <input type="url" id="linkedinURL" name="linkedinURL" required  placeholder="URL" >
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required placeholder="email"> -->
+        
+        <label for="password">Password:</label>
+        <input type="password" name="password" required placeholder="Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}">
+
+        <button type="submit">Subir</button>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</body>
+</html>
