@@ -10,26 +10,33 @@
 <body>
     
     <form>
-        <div class="form-group">
-            <label for="email">LinkedIn:</label>
+        <div class="form-group form-group_error">
+            <label for="email">Email</label>
             <input type="url" id="email" name="email" required  placeholder="URL" >
-            <p class="error-feedback"></p>
+            <p class="error-feedback px-1"><small>Llena el campo con un valor valido</small></p>
         </div>
         <div class="form-group">
             <label for="linkedinURL">LinkedIn</label>
             <input type="url" id="linkedinURL" name="linkedinURL" required  placeholder="URL" >
-            <p class="error-feedback"></p>
+            <p class="error-feedback px-1"><small>Llena el campo con un valor valido</small></p>
         </div>
-<!--         <label for="linkedinURL">LinkedIn:</label>
-        <input type="url" id="linkedinURL" name="linkedinURL" required  placeholder="URL" >
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" required placeholder="Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}">    
+            <p class="error-feedback px-1"><small>Llena el campo con un valor valido</small></p>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" required placeholder="Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}">    
+            <p class="error-feedback px-1"><small>Llena el campo con un valor valido</small></p>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" required placeholder="Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}">    
+            <p class="error-feedback px-1"><small>Llena el campo con un valor valido</small></p>
+        </div>
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" required placeholder="email"> -->
-        
-        <label for="password">Password:</label>
-        <input type="password" name="password" required placeholder="Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}">
-
-        <button type="submit">Subir</button>
+        <button class="btn btn-primary" type="submit">Subir</button>
     </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
