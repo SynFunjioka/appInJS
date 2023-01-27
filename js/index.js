@@ -1,42 +1,48 @@
-$('.btn').click(submit);
 
-function submit(){
-    $('.form-group input').each((index, dom) => {
-        const input = $(dom).attr('name');
+let form = new Form($('form'));
 
-        // TODO: Agrgar un onChangeEvent para detectar cuando el input este correcto y validado
-        switch(input){
-            case 'email':
-                validate(dom, emailValidator)
-        }
-        // console.log(value);
-        // console.log($(dom).attr('name'));
-    });
-}
+let button = $(form).children('button');
 
-function validate(input, validatorFn){
-    const value = $(input).val();
+/**
+ * First check: boolean
+ * Form validate : boolean
+ * 
+ */
+
+// function submit(){
+//     $('.form-group input').each((index, dom) => {
+//         const input = $(dom).attr('name');
+
+//         // TODO: Agrgar un onChangeEvent para detectar cuando el input este correcto y validado
+//         switch(input){
+//             case 'email':
+//                 validate(dom, emailValidator);
+//                 $(dom).change(() => validate(dom, emailValidator));
+//         }
+//     });
+// }
+
+function validate(inputDOM, validatorFn){
+    const value = $(inputDOM).val();
 
     if(!validatorFn(value)){
         console.log('Error');
-        inputError($(input).parent())
+        inputError($(inputDOM).parent());
+    }else{
+        inputSuccess($(inputDOM).parent());
     }
 }
-
-
-// * VALIDATORS
-
-function emailValidator(email){
-    return emailRgx.test(email);
-}
-
-// * REGEX
-const emailRgx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
 
 // * MODIFIERS
 
 function inputError(formGroup){
     console.log(formGroup);
+    $(formGroup).removeClass('form-group_success');
     $(formGroup).addClass('form-group_error');
+}
+
+function inputSuccess(formGroup){
+    console.log(formGroup);
+    $(formGroup).removeClass('form-group_error');
+    $(formGroup).addClass('form-group_success');
 }
