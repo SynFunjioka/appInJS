@@ -5,41 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
+
     <title>App with JS</title>
 </head>
 <body>
     
     <form id="register" novalidate>
+        <!-- Email -->
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="url" id="email" name="email"  placeholder="URL" >
-            <p class="error-feedback px-1"><small>Llena el campo con un valor valido</small></p>
+            <input type="url" id="email" name="email"  placeholder="something@email.com" >
+            <p class="error-feedback px-1"><small>Llena el campo con un email valor valido</small></p>
         </div>
-        <div class="form-group">
-            <label for="linkedinURL">LinkedIn</label>
-            <input type="url" id="linkedinURL" name="linkedinURL"  placeholder="URL" >
-            <p class="error-feedback px-1"><small>Llena el campo con un valor valido</small></p>
-        </div>
+        <!-- Password -->
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}">    
-            <p class="error-feedback px-1"><small>Llena el campo con un valor valido</small></p>
+            <input type="password" name="password" placeholder="Password">    
+            <p class="error-feedback px-1"><small>Mínimo 8 caracteres y máximo 16. Debe contener almenos un número y una letra y un caracter especial</small></p>
         </div>
+        <!-- Linked In link -->
         <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" name="password" placeholder="Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}">    
-            <p class="error-feedback px-1"><small>Llena el campo con un valor valido</small></p>
+            <label for="linkedinURL">LinkedIn</label>
+            <input type="url" id="linkedinURL" name="linkedinURL"  placeholder="https://www.linkedin.com/in/something/" >
+            <p class="error-feedback px-1"><small>El link no es válido</small></p>
         </div>
+        <!-- TEL -->
         <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" name="password" placeholder="Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}">    
-            <p class="error-feedback px-1"><small>Llena el campo con un valor valido</small></p>
+            <label for="tel">Teléfono</label>
+            <input type="tel" name="tel" placeholder="(xxx) xxx-xxx-xxxx">    
+            <p class="error-feedback px-1">
+                <small>El número telefónico es incorrecto (Revise 
+                    <span><a href="https://www.realacapulco.com/info/claves-lada-republica-de-mexico" target="_blank">LADAS</a></span> )
+                </small></p>
         </div>
-
+        <!-- Terms -->
+        <div class="form-group form-check">
+            <input type="checkbox" name="checkbox">    
+            <label for="password">Acepto los términos y condiciones</label> <br>
+            <p class="error-feedback px-1"><small>Debe aceptar los términos y condiciones para poder continuar</small></p>
+        </div>
+        
         <button class="btn btn-primary" type="button">Subir</button>
     </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="./js/utils/mexLadas.js"></script>
+
     <script src="./js/validator.js"></script>
     <script src="./js/index.js"></script>
 </body>

@@ -27,7 +27,7 @@ form button{
     float: right;;
 }
 
-input:not([type=submit]){
+input:not([type=submit], [type=checkbox]){
     height: 2rem;
 
     font-size: 1rem;
@@ -47,6 +47,11 @@ input:focus:not([type="submit"]){
     outline: #92bfd4 solid 2px;
 }
 
+input[type='checkbox']{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
 small{
     font-size: 0.8rem;
 }
@@ -59,8 +64,12 @@ small{
     margin-bottom: 1.5rem;
 }
 
-.error-feedback_hidden{
-    display: none;
+.form-check{
+    display: inline-block;
+}
+
+.form-check .error-feedback{
+    flex: 0 1 100%
 }
 
 .error-feedback{
@@ -68,7 +77,7 @@ small{
     color: #ff3131;
 }
 
-.form-group_error input{
+.form-group_error input:not([type="checkbox"]){
     border: 1px solid #ff3131;
 }
 
@@ -76,22 +85,27 @@ small{
     display: block;
 }
 
-.form-group_error input:focus{
+.form-group_error input:focus:not([type="checkbox"]){
     border: 1px solid #e23333;
     box-shadow:0 0 0.5rem 2px #fd4747;
     outline: #ff3131 solid 1px;
 }
 
-/* .form-group{
-    display: block;;
-} */
+.form-group_success input:not([type="checkbox"]){
+    border: 1px solid #38ff31;
+}
 
+.form-group_success input:focus:not([type="checkbox"]){
+    border: 1px solid #4cff46;
+    box-shadow:0 0 0.5rem 2px #6efa69;
+    outline: #38ff31 solid 1px;
+}
 
 .btn-primary{
     padding: 0.5rem 1rem;
 
-    background-color: #82d5fc;
-    border: 1px solid #7ac6e9;
+    background-color: #0060DF;
+    border: 1px solid rgb(9, 99, 218);
     border-radius: 0.5rem;
 
     transition: all 0.1s ease-in;
