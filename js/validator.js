@@ -1,12 +1,6 @@
 class Form{
     constructor(formDOM, formInputs){
         this.form = formDOM;
-
-        // this.formGroups = $(this.form).children('.form-group').toArray().map(group => {
-        //     //TODO: Determine validator by input type and name
-        //     return new InputGroup(group, Validators.linkedInURL)
-        // });
-        
         this.formGroups = formInputs
         //* Defaults 
 
@@ -16,23 +10,32 @@ class Form{
     }
 
     submit(){
-        // console.log('INPUTS', this.formGroups);
+        if(this.firstCheck){
+            this.formGroups.forEach(input => input.onChange());
+            this.firstCheck = false;
+        }
+
+        if(this.validate()){
+            this.formValid = true;
+        }else{
+            this.formValid = false;
+
+        }
+    }
+
+    validate(){
+        console.log('entro al validator');
+        let isValid = true;
         this.formGroups.forEach(input => {
             input.validate();
-            input.onChange();
-        });
-
-        /* $(this.formGroups).children('input').each((index, dom) => {
-            // console.log('funciona la clase', dom);
-            const input = $(dom).attr('name');
-    
-            switch(input){
-                case 'email':
-                    validate(dom, emailValidator);
-                    $(dom).change(() => validate(dom, emailValidator));
+            if(!input.isValid){
+                isValid = false;
             }
-        }); */
+        });
+        // this.formValid = isValid;
+        return isValid;
     }
+    
 }
 
 class InputGroup{
@@ -40,7 +43,6 @@ class InputGroup{
         this.inputGroup = inputGroupDOM;
         this.input = $(inputGroupDOM).children('input');
         this.inputType = type;
-        console.log('Input group in constructor', this.input);
         this.validator = validator; //? If this is undefined means that this field isn't required.
 
         //* Defaults 
@@ -49,7 +51,6 @@ class InputGroup{
 
     validate(){
         if(!this.validator){ return}
-
 
         let value;
 
@@ -61,8 +62,6 @@ class InputGroup{
                 value = $(this.input).is(':checked');
         }
        
-        console.log(value);
-    
         if(!this.validator(value)){
             this.isValid = false;
             this.inputError($(this.inputGroup));

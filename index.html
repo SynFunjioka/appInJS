@@ -44,14 +44,25 @@
             <label for="password">Acepto los términos y condiciones</label> <br>
             <p class="error-feedback px-1"><small>Debe aceptar los términos y condiciones para poder continuar</small></p>
         </div>
-        
+        <br>
         <button class="btn btn-primary" type="button">Subir</button>
     </form>
+
+    <div class="wrapper">
+        <div class="modal">
+            <h2 class="modal__title">¡Gracias por registrarte!</h2>
+            <p class="modal__text">Datos subidos con éxito</p>
+            <div class="modal__footer">
+                <button class="btn btn-primary" id="closeModalBtn">Ok</button>
+            </div>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="./js/utils/mexLadas.js"></script>
 
     <script src="./js/validator.js"></script>
+    <script src="./js/utils/modal.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>
